@@ -22,6 +22,12 @@ export default function TextForm(props) {
         console.log("tried to write in text area");
         setText(event.target.value);
     }
+
+    let wcounter = (string) => {
+        return string.split(" ").filter(function(string){
+           return string !== ""
+        }).length;
+    }
   return (
     <div style = {{color : props.mode === 'dark'?'White':'grey'}}>
         <h1>{props.title}</h1>
@@ -33,7 +39,7 @@ export default function TextForm(props) {
         <div className="container my-3">
             <h2>Preview</h2>
             <p>{text.length > 0?text : "Enter text for preview"}</p>
-            <p>Words {text.split(" ").length} Characters {text.length}</p>
+            <p>Words {wcounter(text)} Characters {text.length}</p>
         </div>
     </div>
   )
