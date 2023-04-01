@@ -24,7 +24,7 @@ export default function TextForm(props) {
     }
 
     let wcounter = (string) => {
-        return string.split(" ").filter(function(string){
+        return string.split(/\s+/).filter(function(string){
            return string !== ""
         }).length;
     }
@@ -34,8 +34,8 @@ export default function TextForm(props) {
         <div className="mb-3">
             <textarea className="form-control" id="Mytext" value={text} onChange={onHandleChange} rows="10" style = {{backgroundColor : props.mode === 'dark'?'grey':'White'}}></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={onHandleClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={onHandleLower}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={onHandleClick}>Convert to Uppercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={onHandleLower}>Convert to Lowercase</button>
         <div className="container my-3">
             <h2>Preview</h2>
             <p>{text.length > 0?text : "Enter text for preview"}</p>

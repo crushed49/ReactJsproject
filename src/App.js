@@ -8,8 +8,7 @@ import Alerts from './components/Alerts';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -62,8 +61,8 @@ function App() {
       <div className='container'>
       <Routes>
 
-          <Route path="/" element={<TextForm  title = 'Text to be changed' mode = {mode} showAlert = {showAlert} />}/>
-          <Route path="/about" element={<About />}/>
+          <Route exact path="/" element={<TextForm  title = 'Text to be changed' mode = {mode} showAlert = {showAlert} />}/>
+          <Route exact path="/about" element={<About />}/>
       </Routes>
       </div>
       </Router> 
